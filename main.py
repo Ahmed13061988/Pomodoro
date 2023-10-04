@@ -1,4 +1,5 @@
 import tkinter as tk
+
 # ---------------------------- CONSTANTS ------------------------------- #
 PINK = "#e2979c"
 RED = "#e7305b"
@@ -20,7 +21,7 @@ window = tk.Tk()
 window.title("Pomodoro")
 canvas = tk.Canvas(width=200, height=224)
 image = tk.PhotoImage(file="tomato.png")
-canvas.create_image(102, 112, image=image)
+canvas.create_image(103, 112, image=image)
 canvas.pack()
-window.minsize(width=400, height=500)
+window.config(padx=100, pady=50)
 window.mainloop()
