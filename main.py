@@ -19,10 +19,20 @@ LONG_BREAK_MIN = 20
 # ---------------------------- UI SETUP ------------------------------- #
 window = tk.Tk()
 window.title("Pomodoro")
-canvas = tk.Canvas(width=200, height=224, bg=YELLOW, highlightthickness= 0)
+timer = tk.Label(text="Timer", fg=GREEN, bg=YELLOW, font=(FONT_NAME, 30, "bold"))
+timer.grid(column=2,row=1)
+start_button = tk.Button(text="start")
+start_button.grid(column=1,row=3)
+reset_button = tk.Button(text="Reset")
+reset_button.grid(column=4, row=3)
+emoji = tk.Label(text="✓", bg=YELLOW, fg=GREEN)
+emoji.grid(column=2, row=4)
+
+
+canvas = tk.Canvas(width=200, height=224, bg=YELLOW, highlightthickness=0)
 image = tk.PhotoImage(file="tomato.png")
 canvas.create_image(100, 112, image=image)
-canvas.create_text(100, 130, text="00-00", fill="white", font=(FONT_NAME, 35, "bold"))
-canvas.pack()
+canvas.create_text(100, 130, text="00-00", fill="white", font=(FONT_NAME, 35))
+canvas.grid(column=2,row=2)
 window.config(padx=100, pady=50, bg=YELLOW)
 window.mainloop()
